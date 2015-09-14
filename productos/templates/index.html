@@ -1,0 +1,29 @@
+{% if productos %}
+	<table>
+		{% for producto in productos %}
+		<tr>
+			<td>
+			<a href="">{{ producto.nombre }}</a>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<img src="{{ producto.imagen}} " alt="Smiley face" height="42" width="42">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<p>{{ producto.descripcion }}</p>
+			</td>
+		</tr><tr>
+			<td>
+				<p>${{ producto.p_neto }}</p>
+			</td>
+		</tr>
+		<tr></tr>
+		{% endfor %}
+	</table>
+{% else %}
+    <p>No hay productos.</p>
+{% endif %}
+
