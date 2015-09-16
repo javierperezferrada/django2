@@ -1,8 +1,8 @@
 from django.contrib import admin
-from .models import producto
+from .models import Producto
 
 class productoInline(admin.TabularInline):
-    model = producto
+    model = Producto
     extra = 3
 
 
@@ -13,4 +13,4 @@ class productoAdmin(admin.ModelAdmin):
     #list_filter = ['p_neto']
     search_fields = ['descripcion']
 
-admin.site.register(producto, productoAdmin)
+admin.site.register(Producto, productoAdmin)

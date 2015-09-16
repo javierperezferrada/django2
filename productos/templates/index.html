@@ -5,7 +5,7 @@
 		{% for producto in productos %}
 		<tr>
 			<td>
-			<a href="">{{ producto.nombre }}</a>
+			<a href="{% url 'productos:detalle' producto.id %}">{{ producto.nombre }}</a>
 			</td>
 		</tr>
 		<tr>
