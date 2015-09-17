@@ -5,7 +5,7 @@ from .models import Producto
 
 def index(request):
     productos = Producto.objects.order_by('p_neto')
-    return render_to_response('index.html', {'productos': productos})
+    return render_to_response('productos.html', {'productos': productos})
 
 
 def detalle(request, producto_id):

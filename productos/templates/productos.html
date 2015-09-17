@@ -1,0 +1,32 @@
+{% if productos %}
+
+
+	<table>
+		{% for producto in productos %}
+		<tr>
+			<td>
+			<a href="{% url 'productos:detalle' producto.id %}">{{ producto.nombre }}</a>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<a href="{% url 'productos:detalle' producto.id %}">
+					<img src="{{ producto.imagen.url }}" height="220"></a>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<p>{{ producto.descripcion }}</p>
+			</td>
+		</tr><tr>
+			<td>
+				<p>${{ producto.p_venta }}</p>
+			</td>
+		</tr>
+		<tr></tr>
+		{% endfor %}
+	</table>
+{% else %}
+    <p>No hay productos para mostrar.</p>
+{% endif %}
+
