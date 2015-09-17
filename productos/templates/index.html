@@ -10,7 +10,8 @@
 		</tr>
 		<tr>
 			<td>
-				<img src="{{ producto.imagen.url }}" height="220"></a>
+				<a href="{% url 'productos:detalle' producto.id %}">
+					<img src="{{ producto.imagen.url }}" height="220"></a>
 			</td>
 		</tr>
 		<tr>
@@ -26,6 +27,6 @@
 		{% endfor %}
 	</table>
 {% else %}
-    <p>No hay productos.</p>
+    <p>No hay productos para mostrar.</p>
 {% endif %}
 
