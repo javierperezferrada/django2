@@ -1,32 +1,27 @@
-{% if productos %}
+{% extends "base.html" %}
+{% load static %}
+   {% block title %}GyP | Productos{% endblock %}
+
+{% block body %}
+
+	{% if productos %}
 
 
-	<table>
-		{% for producto in productos %}
-		<tr>
-			<td>
-			<a href="{% url 'productos:detalle' producto.id %}">{{ producto.nombre }}</a>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<a href="{% url 'productos:detalle' producto.id %}">
-					<img src="{{ producto.imagen.url }}" height="220"></a>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<p>{{ producto.descripcion }}</p>
-			</td>
-		</tr><tr>
-			<td>
-				<p>${{ producto.p_venta }}</p>
-			</td>
-		</tr>
-		<tr></tr>
-		{% endfor %}
-	</table>
-{% else %}
-    <p>No hay productos para mostrar.</p>
-{% endif %}
+			{% for producto in productos %}
+			<div class='container'>
+				<a href="{% url 'productos:detalle' producto.id %}">{{ producto.nombre }}</a>
 
+					<a href="{% url 'productos:detalle' producto.id %}">
+						<img src="{{ producto.imagen.url }}" height="220"></a>
+
+					<p>{{ producto.descripcion }}</p>
+
+					<p>${{ producto.p_venta }}</p>
+
+			</div>
+			{% endfor %}
+	{% else %}
+	    <p>No hay productos para mostrar.</p>
+	{% endif %}
+
+{% endblock %}
