@@ -6,19 +6,15 @@
 
 	{% if imagenes %}
 
-
-		<table>
+	
 			{% for imagen in imagenes %}
-			<tr>
-				<td>
-					<a href="{% url 'galeria:imagen' imagen.id %}">
-						<img src="{{ imagen.imagen.url }}" height="220"></a>
-				</td>
-			</tr>
+			<div class='container'>
 
-			<tr></tr>
+					<a href="{% url 'galeria:imagen' imagen.id %}">
+						<img class='img-responsive' src="{{ imagen.imagen.url }}" ></a>
+
+			</div>
 			{% endfor %}
-		</table>
 	{% else %}
 	    <p>No hay imagenes.</p>
 	{% endif %}

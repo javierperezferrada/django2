@@ -12,7 +12,7 @@
 				<a href="{% url 'productos:detalle' producto.id %}">{{ producto.nombre }}</a>
 
 					<a href="{% url 'productos:detalle' producto.id %}">
-						<img src="{{ producto.imagen.url }}" height="220"></a>
+						<img class='img-responsive' src="{{ producto.imagen.url }}" height="220"></a>
 
 					<p>{{ producto.descripcion }}</p>
 

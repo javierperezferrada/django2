@@ -3,9 +3,10 @@
    {% block title %}GyP | Productos{% endblock %}
 
 {% block body %}
-
-<h1>{{ imagen.nombre }}</h1>
-<img src="{{ imagen.imagen.url }}" height="880"></a>
-<p>{{ imagen.descripcion }}</p>
+<div class='container'>
+	<h1>{{ imagen.nombre }}</h1>
+	<img class='img-responsive' src="{{ imagen.imagen.url }}" height="880"></a>
+	<p>{{ imagen.descripcion }}</p>
+</div>
 
 {% endblock %}
