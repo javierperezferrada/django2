@@ -8,7 +8,7 @@ class productoInline(admin.TabularInline):
 
 class productoAdmin(admin.ModelAdmin):
   
-    list_display = ('nombre', 'descripcion', 'p_neto')
+    list_display = ('nombre', 'p_neto', 'p_web')
     #inlines = [productoInline]
     #list_filter = ['p_neto']
     search_fields = ['descripcion']
